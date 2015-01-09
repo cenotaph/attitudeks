@@ -22,7 +22,10 @@ ActiveRecord::Base.configurations[:development] = {
 #
 ActiveRecord::Base.configurations[:production] = {
   :adapter => 'mysql',
-  :database => "attitudeks"
+  :database => "attitudeks",
+  :host => "mysql.cenotaph.org",
+  :username => "attitudeks",
+  :password => "p1l@t3s!!"
 
 }
 ActiveRecord::Base.configurations[:test] = {

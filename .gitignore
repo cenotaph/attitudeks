@@ -7,4 +7,5 @@ vendor/gems/*
 db/*.db
 .*.sw*
 public/images/uploads/*
-config/database.rb*.sql
+config/database.rb
+*.sql

@@ -19,6 +19,7 @@ gem 'rake'
 gem 'bcrypt'
 gem 'carrierwave', :require => %w(carrierwave carrierwave/orm/activerecord)
 gem 'sass'
+gem 'fcgi'
 gem 'friendly_id'
 gem 'haml'
 gem 'activerecord', '>= 3.1', :require => 'active_record'

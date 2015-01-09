@@ -63,6 +63,7 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
     enumerable-lazy (0.0.1)
+    fcgi (0.9.2.1)
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
     haml (4.0.6)
@@ -126,6 +127,7 @@ DEPENDENCIES
   activerecord (>= 3.1)
   bcrypt
   carrierwave
+  fcgi
   friendly_id
   haml
   mini_magick
