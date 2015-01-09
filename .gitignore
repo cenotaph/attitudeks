@@ -10,3 +10,6 @@ public/images/uploads/*
 config/database.rb
 *.sql
 sync_db
+public/admin/javascripts/ckeditor/*
+public/stylesheets/attitudeks.css.map
+public/stylesheets/attitudeks.css

@@ -30,7 +30,7 @@
         %th.header= mat(:page, :title)
         %th.header= mat(:page, :body)
         %th.header= mat(:page, :published)
-        %th.header= mat(:page, :slug)
+
         %th.header= mat(:page, :created_at)
         %th.header= mat(:page, :updated_at)
         %th.header.list-row-action-header
@@ -42,9 +42,9 @@
             =check_box_tag 'page_ids[]', :value => page.id, :class => 'list-selectable-checkbox'
           %td.list-column=page.id
           %td.list-column=page.title
-          %td.list-column=page.body
+          %td.list-column= truncate page.body
           %td.list-column= page.published ? tag_icon(:ok) : tag_icon(:remove)
-          %td.list-column=page.slug
+
           %td.list-column=time_ago_in_words page.created_at
           %td.list-column=time_ago_in_words page.updated_at
           %td.list-column.list-row-action

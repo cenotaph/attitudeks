@@ -3,16 +3,22 @@
   %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
   %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   = stylesheet_link_tag 'pure-min', 'grids-responsive-min'
+  = stylesheet_link_tag 'attitudeks'
+
   %title Test
   
 %body
   %header
     %nav
       %ul
-        %li menu
-        %li menu
-  %section
+        %li.title= link_to 'ATTITUDEKS', '/'
+        %li= link_to 'Kehon tuntemisesta liikkeeseen', '/lehti/kehon-tuntemisesta-liikkeeseen'
+        %li= link_to 'Kalenteri', '/lehti/kalenteri'
+        %li= link_to 'Blogi', '/blogi'
+        %li= link_to 'Kontakti', '/lehti/kontakti'
+        
+  %section.content
     %article= yield
 
   %footer
-    %p copyright info, footer, etc.
+    %p 2015 Kristina Sanaksenaho

@@ -1,0 +1,80 @@
+$primary-color: #FD353A;
+$secondary-color: #FE9092;
+
+body, h1, h2 {
+  color: #333;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  &:hover { 
+    color: $secondary-color;
+  }
+}
+
+nav {
+  margin-top: 1.5rem;
+
+  width: 100%;
+  float: left;
+  ul {
+    li {
+      float: left;
+      font-size: 1.4rem;
+      padding-right: 1rem;
+      height: 2.5rem;
+      a {
+        vertical-align: -webkit-baseline-middle;
+      }
+      &.title {
+        font-size: 2.2rem;
+        a {
+          vertical-align: baseline;
+        }
+      }
+    }
+  }
+  clear: both;
+  border-bottom: 1px dotted $primary-color;
+}
+
+section.content {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  clear: left;
+  
+  
+  .front_image_wrapper {
+    max-width: 590px;
+    .front_image {
+      margin: 5px;
+    }
+  }
+}
+
+.step_description {
+  font-weight: 300;
+  margin: 1rem 0px;
+}
+
+
+footer {
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  border-top: 1px dotted $primary-color;
+}
+@media screen and (max-width: 47em) {
+  nav {
+    ul {
+      li {
+        font-size: 1.1rem;
+        &.title {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}

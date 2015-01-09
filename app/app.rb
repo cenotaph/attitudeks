@@ -20,7 +20,28 @@ module Attitudeks
       @imageset = Imageset.find(params[:id])
       render 'step'
     end
-     
+    
+    get '/lehti/:id' do
+      @page = Page.friendly.find(params[:id])
+      render 'page'
+    end
+    
+    get '/blogi' do
+      @posts = Post.published.order(created_at: :desc)
+      render 'posts/index'
+    end
+    
+    post :imageupload, :csrf_protection => false  do
+      @image = Ckupload.new(:data => params[:upload])
+      if @image.save
+        %Q"<script type='text/javascript'>
+          window.parent.CKEDITOR.tools.callFunction(#{params[:CKEditorFuncNum]}, 'http://#{request.env["SERVER_NAME"]}:#{request.env["SERVER_PORT"]}#{@image.data.url}');
+        </script>"
+
+      else
+         params.inspect
+      end
+    end
     ##
     # Caching support.
     #

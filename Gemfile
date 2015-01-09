@@ -25,6 +25,7 @@ gem 'haml'
 gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'mini_magick'
 gem 'mysql'
+gem "html_truncator", "~>0.2"
 gem 'tux', group: :development
 # Test requirements
 gem 'shoulda', :group => 'test'
