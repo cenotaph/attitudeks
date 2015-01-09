@@ -1,0 +1,13 @@
+.pure-g
+  .pure-u-1-1
+    %h2= @imageset.title
+
+.pure-g
+  - @imageset.images[0..1].each do |i|
+    .pure-u-1-1.pure-u-md-1-2
+      = image_tag i.file.url(:medium), class: "pure-img"
+  .pure-u-1-1
+    = @imageset.description
+  - @imageset.images[2..3].each do |i|
+    .pure-u-1-1.pure-u-md-1-2
+      = image_tag i.file.url(:medium), class: "pure-img" 

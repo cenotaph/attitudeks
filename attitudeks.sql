@@ -123,8 +123,38 @@ CREATE TABLE `imagesets` (
 
 LOCK TABLES `imagesets` WRITE;
 /*!40000 ALTER TABLE `imagesets` DISABLE KEYS */;
-INSERT INTO `imagesets` VALUES (1,'First',1,'test','2015-01-07 10:04:32','2015-01-07 10:04:32'),(2,'Second',2,'test','2015-01-07 10:04:43','2015-01-07 10:04:43'),(3,'Third',3,'test','2015-01-07 10:04:50','2015-01-07 10:04:50'),(4,'Fourth',4,'test','2015-01-07 10:05:00','2015-01-07 10:05:00'),(5,'Fifth',5,'test','2015-01-07 10:05:09','2015-01-07 10:05:09'),(6,'Sixth',6,'test','2015-01-07 10:05:18','2015-01-07 10:05:18');
+INSERT INTO `imagesets` VALUES (1,'Pystyasento',1,'Pystyasennossa on havaittavissa se, kuinka hyvin jÃ¤senet ovat kohdallaan. Oikein linjattu pystyasento antaa tuen, joka on aistittavissa keveytenÃ¤ ja lepona.','2015-01-07 10:04:32','2015-01-09 14:32:07'),(2,'Tuki ja roikunta',2,'Kun ylÃ¤vartalo lasketaan pÃ¤Ã¤ edellÃ¤ jalkojen luiden ja lonkkanivelen tukeen, lihakset pÃ¤Ã¤sevÃ¤t venymÃ¤Ã¤n ja nikamat vapautuvat pystyasennon paineesta.','2015-01-07 10:04:43','2015-01-09 14:31:48'),(3,'Kierto ja liike',3,'KiertoliikkeessÃ¤ voi aistia vastakkaisiin suuntiin vaikuttavien lihasten tyÃ¶n. Liikesuuntaan. tyÃ¶skentelevÃ¤t lihakset ikÃ¤Ã¤n kuin vetÃ¤vÃ¤t ja venyvÃ¤t lihakset mahdollistavat laajan liikkeen','2015-01-07 10:04:50','2015-01-09 14:31:16'),(4,'Venytys',4,'Kun lihasten kiinnityspÃ¤Ã¤t loitonnetaan toisistaan venytysasennossa, kireys pÃ¤Ã¤see purkautumaan.\r\nVenytys on jatkuvaa tapahtumaa.','2015-01-07 10:05:00','2015-01-09 14:30:59'),(5,'Tuki ja suunta',5,'Liikeradat ovat jatkumoita, joissa lihakset liikuttavat luita. Liikkeen voi hahmottaa alkuasentona, toimintana ja saapumisena.','2015-01-07 10:05:09','2015-01-09 13:55:24'),(6,'Lepo ja liike',6,'Kunkin lihaksen fysiologinen tehtÃ¤vÃ¤ tarkentuu, kun kehon luonnollisia liikeratoja harjoitetaan tietoisesti. NÃ¤in lÃ¶ytyy myÃ¶s liikkeen keveys.','2015-01-07 10:05:18','2015-01-09 14:30:34');
 /*!40000 ALTER TABLE `imagesets` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pages`
+--
+
+DROP TABLE IF EXISTS `pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `body` text,
+  `published` tinyint(1) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_pages_on_slug` (`slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pages`
+--
+
+LOCK TABLES `pages` WRITE;
+/*!40000 ALTER TABLE `pages` DISABLE KEYS */;
+INSERT INTO `pages` VALUES (1,'KEHON TUNTEMISESTA LIIKKEESEEN','Kehosi on liikkeen lÃÂ€htÃÂ¶kohta Ã¢â¬â elÃÂ€vÃÂ€ÃÂ€ arkkitehtuuria\r\n\r\nArkkitehtuuri viittaa rakenteisiin, osien suhteisiin, tukeen ja kannatukseen. TÃÂ€stÃÂ€ on kyse myÃÂ¶s kehoarkkitehtuurissa. Luinen tukirakennelma, nivelet liitoksina ja lihakset luiden liikuttajina muodostavat toimivan kokonaisuuden, elÃÂ€vÃÂ€n arkkitehtuurin.\r\n\r\nKehon rakenne ja fysiologiset lainalaisuudet luovat hienon loogisen jÃÂ€rjestelmÃÂ€n. Sen tarkkaileva tutkiminen syventÃÂ€ÃÂ€ yhteyttÃÂ€ omaan kehoon Ã¢â¬â todellisuuteen.\r\n\r\nSuhde kehoon nÃÂ€kyy kauas. Kun tiedostat, miten kehosi toimii ja lÃÂ¶ydÃÂ€t liikkeiden yhteyden, voit myÃÂ¶s kokea liikkumisen kauneutta.\r\n\r\nLiikuntatieteiden kandidaatin koulutukseni ja 20 vuoden tyÃÂ¶ liikunnanopettajana kaikilla kouluasteilla sekÃÂ€ opettajankoulutuksessa ovat opettaneet minulle ihmiskehon arkkitehtuuria.\r\nIhmisen perusrakenne on kaikille yhteinen, mutta jokaisen kokemus omasta kehosta on erilainen. TÃÂ€hÃÂ€n kokemiseen vaikuttavat ikÃÂ€ ja suhde fyysisyyteen.\r\n\r\nHavainnointi on harjoittelun lÃÂ€htÃÂ¶kohta. Se paljastaa kunkin ongelmakohtia ja toisaalta auttaa lÃÂ¶ytÃÂ€mÃÂ€ÃÂ€n loogisia ja mahdollisia ratkaisuja niihin. Harjoittelusta muodostuu fyysinen dialogi oman kehon ja ohjauksen vÃÂ€lillÃÂ€.\r\n\r\nYliopistokoulutuksen ja tyÃÂ¶kokemuksen lisÃÂ€ksi ohjauksessani vaikuttavat nykytanssi ja Pilates. Liikkeen analysointia olen oppinut erityisesti tanssipedagogi Eeva Kaarion yksityistunneilla. Tutustuminen Pilates-menetelmÃÂ€ÃÂ€n on tarkentanut tietÃÂ€mystÃÂ€ eri lihastukijÃÂ€rjestelmien merkityksestÃÂ€.\r\n\r\nOhjaajana olen innostunut niistÃÂ€ mahdollisuuksista, joita voit omasta kehostasi lÃÂ¶ytÃÂ€ÃÂ€, kun tieto jÃÂ€sentyy arjen kÃÂ€ytÃÂ€nnÃÂ¶ksi.\r\n\r\n\r\nTunnit\r\n\r\nRyhmÃÂ€tunnit\r\nTasapainoinen pystyasento eli ryhti syntyy, kun raajat kytkeytyvÃÂ€t keskivartalon tukeen. KireÃÂ€t lihakset pidennetÃÂ€ÃÂ€n niin, ettÃÂ€ niiden supistumis- ja venymiskyky elpyy ja laajat liikeradat tulevat mahdollisiksi. Tietoiset toistot kehittÃÂ€vÃÂ€t lihasvoimaa ja selkiyttÃÂ€vÃÂ€t oikeita liikeratoja.\r\n\r\n\r\nYksityistunnit\r\nYksityistunneilla on mahdollista paneutua syvemmin kunkin harjoittelun tavoitteisiin ja erityisongelmiin. Tavoitteita voivat olla niin hyvinvointi ja terveys kuin virhetottumuksien tai rajoitteiden tyÃÂ¶stÃÂ€minen. Yksityistunti varataan.\r\n\r\nKerron mielellÃÂ€ni tunneista tarkemmin puhelimitse tai sÃÂ€hkÃÂ¶postilla.\r\n\r\n\r\n',1,'kehon-tuntemisesta-liikkeeseen','2015-01-09 13:53:25','2015-01-09 13:53:25'),(2,'Kalenteri','Enter calendar here',1,'kalenteri','2015-01-09 13:56:00','2015-01-09 13:56:00');
+/*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -141,7 +171,9 @@ CREATE TABLE `posts` (
   `published` tinyint(1) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `slug` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_posts_on_slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -173,7 +205,7 @@ CREATE TABLE `schema_migrations` (
 
 LOCK TABLES `schema_migrations` WRITE;
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` VALUES ('1'),('2'),('3'),('4'),('5');
+INSERT INTO `schema_migrations` VALUES ('1'),('2'),('3'),('4'),('5'),('6');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -186,4 +218,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-01-07  5:50:27
+-- Dump completed on 2015-01-09  9:32:41

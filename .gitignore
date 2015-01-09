@@ -9,3 +9,4 @@ db/*.db
 public/images/uploads/*
 config/database.rb
 *.sql
+sync_db

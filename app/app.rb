@@ -15,7 +15,12 @@ module Attitudeks
     get :about, :map => '/about_us' do
       render :haml, "%p This is a sample blog created to demonstrate how Padrino works!"
     end
-    
+  
+    get '/step/:id' do
+      @imageset = Imageset.find(params[:id])
+      render 'step'
+    end
+     
     ##
     # Caching support.
     #
