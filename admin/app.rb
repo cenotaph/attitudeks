@@ -33,6 +33,7 @@ module Attitudeks
     end
 
     access_control.roles_for :admin do |role|
+      role.project_module :pages, '/pages'
       role.project_module :images, '/images'
       role.project_module :imagesets, '/imagesets'
       role.project_module :posts, '/posts'

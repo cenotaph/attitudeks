@@ -8,7 +8,8 @@ module Attitudeks
     enable :sessions
 
     get "/" do
-      "Hello World!"
+      @sets = Image.primary
+      render 'frontpage'
     end
 
     get :about, :map => '/about_us' do

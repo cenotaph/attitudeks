@@ -1,0 +1,6 @@
+- @sets.in_groups_of(2).each do |set|
+  .pure-g
+    - set.each do |i|
+      - next if i.nil?
+      .pure-u-1-1.pure-u-md-1-2
+        = image_tag i.file.url(:medium), class: "pure-img"

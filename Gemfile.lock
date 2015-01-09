@@ -55,6 +55,7 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.0)
     bcrypt (3.1.9)
+    bond (0.5.1)
     builder (3.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -62,6 +63,8 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
     enumerable-lazy (0.0.1)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     haml (4.0.6)
       tilt
     i18n (0.7.0)
@@ -77,12 +80,20 @@ GEM
       enumerable-lazy
     mysql (2.9.1)
     polyglot (0.3.5)
-    rack (1.6.0)
+    rack (1.5.2)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.4.2)
+    ripl (0.7.1)
+      bond (~> 0.5.1)
+    ripl-multi_line (0.3.1)
+      ripl (>= 0.3.6)
+    ripl-rack (0.2.1)
+      rack (>= 1.0)
+      rack-test (~> 0.6.2)
+      ripl (>= 0.7.0)
     sass (3.4.9)
     shoulda (3.5.0)
       shoulda-context (~> 1.0, >= 1.0.1)
@@ -100,6 +111,11 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    tux (0.3.0)
+      ripl (>= 0.3.5)
+      ripl-multi_line (>= 0.2.4)
+      ripl-rack (>= 0.2.0)
+      sinatra (>= 1.2.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
 
@@ -110,11 +126,14 @@ DEPENDENCIES
   activerecord (>= 3.1)
   bcrypt
   carrierwave
+  friendly_id
   haml
   mini_magick
   mysql
   padrino!
+  rack (= 1.5.2)
   rack-test
   rake
   sass
   shoulda
+  tux

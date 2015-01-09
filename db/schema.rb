@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5) do
+ActiveRecord::Schema.define(version: 6) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "name",             limit: 255
@@ -48,12 +48,26 @@ ActiveRecord::Schema.define(version: 5) do
     t.datetime "updated_at"
   end
 
+  create_table "pages", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "body",       limit: 65535
+    t.boolean  "published",  limit: 1
+    t.string   "slug",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
+
   create_table "posts", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.text     "body",       limit: 65535
     t.boolean  "published",  limit: 1
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug",       limit: 255
   end
+
+  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
 
 end
