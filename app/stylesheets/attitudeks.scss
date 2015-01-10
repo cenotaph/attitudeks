@@ -1,9 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
+
 $primary-color: #FD353A;
 $secondary-color: #FE9092;
 
 body, h1, h2 {
   color: #333;
   font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 a {
@@ -53,6 +56,16 @@ section.content {
       margin: 5px;
     }
   }
+  
+  .step_image_wrapper {
+    max-width: 590px;
+    .step_image {
+      margin: 5px;
+      max-height: 385px;
+      overflow: hidden;
+    }
+  }
+  
 }
 
 .step_description {

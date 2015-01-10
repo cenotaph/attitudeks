@@ -4,12 +4,12 @@
 
 .pure-g
   - @imageset.images[0..1].each do |i|
-    .pure-u-1-1.pure-u-md-1-2
-      = image_tag i.file.url(:medium), class: "pure-img"
+    .pure-u-1-1.pure-u-md-1-2.step_image_wrapper
+      .step_image= image_tag i.file.url(:medium), class: "pure-img"
 .pure-g
   .pure-u-1-1.step_description
     = @imageset.description
 .pure-g
   - @imageset.images[2..3].each do |i|
-    .pure-u-1-1.pure-u-md-1-2
-      = image_tag i.file.url(:medium), class: "pure-img" 
+    .pure-u-1-1.pure-u-md-1-2.step_image_wrapper
+      .step_image= image_tag i.file.url(:medium), class: "pure-img" 
