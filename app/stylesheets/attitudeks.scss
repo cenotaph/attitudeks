@@ -54,6 +54,45 @@ section.content {
     max-width: 590px;
     .front_image {
       margin: 5px;
+      padding-bottom: 66.666666666667%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 0;
+      float: left;
+//      max-width: 580px;
+//      max-height: 385px;
+//      min-height: 250px;
+      .cover {
+        display: inline;
+        background-color: #ABABAB;
+        opacity: 0;
+        float: left;
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        padding: 10px 10px 66.666666666667% 10px;
+        &:hover {
+          opacity: 0.75;
+        }
+        
+
+        .set_title {
+          font-size: 1.3rem;
+          margin-bottom: 2rem;
+          float: left;
+          color: #333;
+          padding-bottom: .5rem;
+          border-bottom: 1px solid $primary-color;
+        }
+        .set_description {
+          clear: both;
+          float: left;
+          font-size: 0.8rem;
+          font-weight: 300;
+          color: #333;
+        }
+      }
     }
   }
   

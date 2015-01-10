@@ -3,4 +3,9 @@
     - set.each do |i|
       - next if i.nil?
       .pure-u-1-1.pure-u-md-1-2.front_image_wrapper
-        .front_image= link_to image_tag(i.file.url(:medium), class: "pure-img"), "/step/#{i.imageset.slug}"
+        = link_to "/step/#{i.imageset.slug}" do
+          .front_image{style: "background-image: url(#{i.file.url(:medium)});" }
+            .cover
+
+              .set_title= i.imageset.title
+              .set_description= i.imageset.description
