@@ -35,7 +35,7 @@ module Attitudeks
       @image = Ckupload.new(:data => params[:upload])
       if @image.save
         %Q"<script type='text/javascript'>
-          window.parent.CKEDITOR.tools.callFunction(#{params[:CKEditorFuncNum]}, 'http://#{request.env["SERVER_NAME"]}:#{request.env["SERVER_PORT"]}#{@image.data.url}');
+          window.parent.CKEDITOR.tools.callFunction(#{params[:CKEditorFuncNum]}, 'http://#{request.env["SERVER_NAME"]}:#{request.env["SERVER_PORT"]}#{@image.data.url(:medium)}');
         </script>"
 
       else
