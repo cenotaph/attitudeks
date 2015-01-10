@@ -66,6 +66,13 @@ section.content {
     }
   }
   
+  .page_wrapper {
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
 }
 
 .step_description {
