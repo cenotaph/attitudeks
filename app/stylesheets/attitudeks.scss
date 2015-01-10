@@ -66,12 +66,17 @@ section.content {
     }
   }
   
-  .page_wrapper {
+  .page_wrapper, .post .body {
     img {
       max-width: 100%;
-      height: auto;
+      height: auto !important;
       display: block;
+      padding: 30px 0px;
     }
+  }
+  
+  .post {
+    padding-left: .5rem;
   }
 }
 
@@ -94,6 +99,14 @@ footer {
         &.title {
           font-size: 1.8rem;
         }
+      }
+    }
+  }
+  
+  section.content {
+    .page_wrapper, .post .body {
+      img {
+        padding: 30px 0px;
       }
     }
   }
