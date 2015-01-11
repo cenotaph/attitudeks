@@ -1,3 +1,6 @@
+.pure-g
+  .pure-u-1-1
+    .front_description KEHON TUNTEMISESTA LIIKKEESEEN
 - @sets.in_groups_of(2).each do |set|
   .pure-g
     - set.each do |i|
@@ -7,5 +10,5 @@
           .front_image{style: "background-image: url(#{i.file.url(:medium)});" }
             .cover
 
-              .set_title= i.imageset.title
+              .set_title= i.imageset.title 
               .set_description= i.imageset.description

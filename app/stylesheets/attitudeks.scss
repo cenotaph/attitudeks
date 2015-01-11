@@ -9,8 +9,13 @@ body, h1, h2 {
   font-weight: 300;
   font-family: 'Source Sans Pro', sans-serif;
 }
+h4, h2 {
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dotted $primary-color;
+  float: left;
+}
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 a {
   text-decoration: none;
@@ -19,7 +24,9 @@ a {
     color: $secondary-color;
   }
 }
-
+.front_description {
+  padding: 1.5rem 0.5rem;
+}
 nav {
   margin-top: 1.5rem;
   padding-bottom: 1rem;
@@ -54,7 +61,7 @@ section.content {
   
   
   .front_image_wrapper {
-    max-width: 590px;
+    max-width: 430px;
     .front_image {
       margin: 5px;
       padding-bottom: 66.666666666667%;
@@ -63,9 +70,7 @@ section.content {
       background-repeat: no-repeat;
       height: 0;
       float: left;
-//      max-width: 580px;
-//      max-height: 385px;
-//      min-height: 250px;
+
       .cover {
         display: inline;
         background-color: #ABABAB;
@@ -99,6 +104,16 @@ section.content {
     }
   }
   
+  table {
+    td {
+      width: 30%;
+      vertical-align: top;
+      img {
+        width: 420px;
+      }
+    }
+  }
+  
   .step_image_wrapper {
     max-width: 590px;
     .step_image {
@@ -109,9 +124,7 @@ section.content {
   }
   
   .page_wrapper, .post .body {
-    p {
-      margin-left: 1rem;
-    }
+
     img {
       max-width: 100%;
       height: auto !important;

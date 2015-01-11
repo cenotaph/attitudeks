@@ -11,7 +11,7 @@
   %header
     %nav
       %ul
-        %li.title= link_to 'ATTITUDEKS', '/'
+        %li.title= link_to 'ATTITUDE KS', '/'
         %li= link_to 'Attitude', '/lehti/kehon-tuntemisesta-liikkeeseen'
         %li= link_to 'Tunnit', '/lehti/kalenteri'
         %li= link_to 'Blogi', '/blogi'
@@ -21,4 +21,10 @@
     %article= yield
 
   %footer
-    %p 2015 Kristina Sanaksenaho
+    %p 
+      2015 Kristina Sanaksenaho
+      &sdot;
+      = link_to 'Facebook', '#'
+    %p
+      %small kuvat: Mia Pajunen
+      
