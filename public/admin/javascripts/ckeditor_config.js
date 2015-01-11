@@ -4,4 +4,5 @@ CKEDITOR.editorConfig = function( config ) {
   config.filebrowserUploadUrl = '/fileupload';
   config.filebrowserImageUploadUrl = '/imageupload';
   config.uiColor = '#AADC6E';
+  config.allowedContent = true;
 };
