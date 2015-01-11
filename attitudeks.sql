@@ -41,8 +41,36 @@ CREATE TABLE `accounts` (
 
 LOCK TABLES `accounts` WRITE;
 /*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
-INSERT INTO `accounts` VALUES (1,'Foo','Bar','attitude.ks@attitudeks.com','$2a$10$kKL2Ss2dxuuWRvWm3sLIQusW69MMLg2VKai/qaOaK5bPAe.Ix0STy','admin','2015-01-06 21:48:53','2015-01-06 21:48:53');
+INSERT INTO `accounts` VALUES (1,'Kristina','Sanaksenaho','attitude.ks@attitudeks.com','$2a$10$kKL2Ss2dxuuWRvWm3sLIQusW69MMLg2VKai/qaOaK5bPAe.Ix0STy','admin','2015-01-06 21:48:53','2015-01-10 11:59:35');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ckuploads`
+--
+
+DROP TABLE IF EXISTS `ckuploads`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ckuploads` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `data_file_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `data_content_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `data_file_size` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ckuploads`
+--
+
+LOCK TABLES `ckuploads` WRITE;
+/*!40000 ALTER TABLE `ckuploads` DISABLE KEYS */;
+INSERT INTO `ckuploads` VALUES (1,'10000001A.jpg',NULL,NULL,'2015-01-10 10:33:29','2015-01-10 10:33:29'),(2,'10000002A.jpg',NULL,NULL,'2015-01-10 10:42:24','2015-01-10 10:42:24'),(3,'2013-05-15_12.10.39.jpg',NULL,NULL,'2015-01-10 10:45:22','2015-01-10 10:45:22');
+/*!40000 ALTER TABLE `ckuploads` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -113,6 +141,7 @@ CREATE TABLE `imagesets` (
   `description` text,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -123,7 +152,7 @@ CREATE TABLE `imagesets` (
 
 LOCK TABLES `imagesets` WRITE;
 /*!40000 ALTER TABLE `imagesets` DISABLE KEYS */;
-INSERT INTO `imagesets` VALUES (1,'Pystyasento',1,'Pystyasennossa on havaittavissa se, kuinka hyvin jÃ¤senet ovat kohdallaan. Oikein linjattu pystyasento antaa tuen, joka on aistittavissa keveytenÃ¤ ja lepona.','2015-01-07 10:04:32','2015-01-09 14:32:07'),(2,'Tuki ja roikunta',2,'Kun ylÃ¤vartalo lasketaan pÃ¤Ã¤ edellÃ¤ jalkojen luiden ja lonkkanivelen tukeen, lihakset pÃ¤Ã¤sevÃ¤t venymÃ¤Ã¤n ja nikamat vapautuvat pystyasennon paineesta.','2015-01-07 10:04:43','2015-01-09 14:31:48'),(3,'Kierto ja liike',3,'KiertoliikkeessÃ¤ voi aistia vastakkaisiin suuntiin vaikuttavien lihasten tyÃ¶n. Liikesuuntaan. tyÃ¶skentelevÃ¤t lihakset ikÃ¤Ã¤n kuin vetÃ¤vÃ¤t ja venyvÃ¤t lihakset mahdollistavat laajan liikkeen','2015-01-07 10:04:50','2015-01-09 14:31:16'),(4,'Venytys',4,'Kun lihasten kiinnityspÃ¤Ã¤t loitonnetaan toisistaan venytysasennossa, kireys pÃ¤Ã¤see purkautumaan.\r\nVenytys on jatkuvaa tapahtumaa.','2015-01-07 10:05:00','2015-01-09 14:30:59'),(5,'Tuki ja suunta',5,'Liikeradat ovat jatkumoita, joissa lihakset liikuttavat luita. Liikkeen voi hahmottaa alkuasentona, toimintana ja saapumisena.','2015-01-07 10:05:09','2015-01-09 13:55:24'),(6,'Lepo ja liike',6,'Kunkin lihaksen fysiologinen tehtÃ¤vÃ¤ tarkentuu, kun kehon luonnollisia liikeratoja harjoitetaan tietoisesti. NÃ¤in lÃ¶ytyy myÃ¶s liikkeen keveys.','2015-01-07 10:05:18','2015-01-09 14:30:34');
+INSERT INTO `imagesets` VALUES (1,'Pystyasento',1,'Pystyasennossa on havaittavissa se, kuinka hyvin jÃ¤senet ovat kohdallaan. Oikein linjattu pystyasento antaa tuen, joka on aistittavissa keveytenÃ¤ ja lepona.','2015-01-07 10:04:32','2015-01-09 14:45:53','1-pystyasento'),(2,'Tuki ja roikunta',2,'Kun ylÃ¤vartalo lasketaan pÃ¤Ã¤ edellÃ¤ jalkojen luiden ja lonkkanivelen tukeen, lihakset pÃ¤Ã¤sevÃ¤t venymÃ¤Ã¤n ja nikamat vapautuvat pystyasennon paineesta.','2015-01-07 10:04:43','2015-01-09 14:45:53','2-tuki-ja-roikunta'),(3,'Kierto ja liike',3,'KiertoliikkeessÃ¤ voi aistia vastakkaisiin suuntiin vaikuttavien lihasten tyÃ¶n. Liikesuuntaan. tyÃ¶skentelevÃ¤t lihakset ikÃ¤Ã¤n kuin vetÃ¤vÃ¤t ja venyvÃ¤t lihakset mahdollistavat laajan liikkeen','2015-01-07 10:04:50','2015-01-09 14:45:54','3-kierto-ja-liike'),(4,'Venytys',4,'Kun lihasten kiinnityspÃ¤Ã¤t loitonnetaan toisistaan venytysasennossa, kireys pÃ¤Ã¤see purkautumaan.\r\nVenytys on jatkuvaa tapahtumaa.','2015-01-07 10:05:00','2015-01-09 14:45:54','4-venytys'),(5,'Tuki ja suunta',5,'Liikeradat ovat jatkumoita, joissa lihakset liikuttavat luita. Liikkeen voi hahmottaa alkuasentona, toimintana ja saapumisena.','2015-01-07 10:05:09','2015-01-09 14:45:55','5-tuki-ja-suunta'),(6,'Lepo ja liike',6,'Kunkin lihaksen fysiologinen tehtÃ¤vÃ¤ tarkentuu, kun kehon luonnollisia liikeratoja harjoitetaan tietoisesti. NÃ¤in lÃ¶ytyy myÃ¶s liikkeen keveys.','2015-01-07 10:05:18','2015-01-09 14:47:40','6-lepo-ja-liike');
 /*!40000 ALTER TABLE `imagesets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,7 +173,7 @@ CREATE TABLE `pages` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_pages_on_slug` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,7 +182,7 @@ CREATE TABLE `pages` (
 
 LOCK TABLES `pages` WRITE;
 /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
-INSERT INTO `pages` VALUES (1,'KEHON TUNTEMISESTA LIIKKEESEEN','Kehosi on liikkeen lÃÂ€htÃÂ¶kohta Ã¢â¬â elÃÂ€vÃÂ€ÃÂ€ arkkitehtuuria\r\n\r\nArkkitehtuuri viittaa rakenteisiin, osien suhteisiin, tukeen ja kannatukseen. TÃÂ€stÃÂ€ on kyse myÃÂ¶s kehoarkkitehtuurissa. Luinen tukirakennelma, nivelet liitoksina ja lihakset luiden liikuttajina muodostavat toimivan kokonaisuuden, elÃÂ€vÃÂ€n arkkitehtuurin.\r\n\r\nKehon rakenne ja fysiologiset lainalaisuudet luovat hienon loogisen jÃÂ€rjestelmÃÂ€n. Sen tarkkaileva tutkiminen syventÃÂ€ÃÂ€ yhteyttÃÂ€ omaan kehoon Ã¢â¬â todellisuuteen.\r\n\r\nSuhde kehoon nÃÂ€kyy kauas. Kun tiedostat, miten kehosi toimii ja lÃÂ¶ydÃÂ€t liikkeiden yhteyden, voit myÃÂ¶s kokea liikkumisen kauneutta.\r\n\r\nLiikuntatieteiden kandidaatin koulutukseni ja 20 vuoden tyÃÂ¶ liikunnanopettajana kaikilla kouluasteilla sekÃÂ€ opettajankoulutuksessa ovat opettaneet minulle ihmiskehon arkkitehtuuria.\r\nIhmisen perusrakenne on kaikille yhteinen, mutta jokaisen kokemus omasta kehosta on erilainen. TÃÂ€hÃÂ€n kokemiseen vaikuttavat ikÃÂ€ ja suhde fyysisyyteen.\r\n\r\nHavainnointi on harjoittelun lÃÂ€htÃÂ¶kohta. Se paljastaa kunkin ongelmakohtia ja toisaalta auttaa lÃÂ¶ytÃÂ€mÃÂ€ÃÂ€n loogisia ja mahdollisia ratkaisuja niihin. Harjoittelusta muodostuu fyysinen dialogi oman kehon ja ohjauksen vÃÂ€lillÃÂ€.\r\n\r\nYliopistokoulutuksen ja tyÃÂ¶kokemuksen lisÃÂ€ksi ohjauksessani vaikuttavat nykytanssi ja Pilates. Liikkeen analysointia olen oppinut erityisesti tanssipedagogi Eeva Kaarion yksityistunneilla. Tutustuminen Pilates-menetelmÃÂ€ÃÂ€n on tarkentanut tietÃÂ€mystÃÂ€ eri lihastukijÃÂ€rjestelmien merkityksestÃÂ€.\r\n\r\nOhjaajana olen innostunut niistÃÂ€ mahdollisuuksista, joita voit omasta kehostasi lÃÂ¶ytÃÂ€ÃÂ€, kun tieto jÃÂ€sentyy arjen kÃÂ€ytÃÂ€nnÃÂ¶ksi.\r\n\r\n\r\nTunnit\r\n\r\nRyhmÃÂ€tunnit\r\nTasapainoinen pystyasento eli ryhti syntyy, kun raajat kytkeytyvÃÂ€t keskivartalon tukeen. KireÃÂ€t lihakset pidennetÃÂ€ÃÂ€n niin, ettÃÂ€ niiden supistumis- ja venymiskyky elpyy ja laajat liikeradat tulevat mahdollisiksi. Tietoiset toistot kehittÃÂ€vÃÂ€t lihasvoimaa ja selkiyttÃÂ€vÃÂ€t oikeita liikeratoja.\r\n\r\n\r\nYksityistunnit\r\nYksityistunneilla on mahdollista paneutua syvemmin kunkin harjoittelun tavoitteisiin ja erityisongelmiin. Tavoitteita voivat olla niin hyvinvointi ja terveys kuin virhetottumuksien tai rajoitteiden tyÃÂ¶stÃÂ€minen. Yksityistunti varataan.\r\n\r\nKerron mielellÃÂ€ni tunneista tarkemmin puhelimitse tai sÃÂ€hkÃÂ¶postilla.\r\n\r\n\r\n',1,'kehon-tuntemisesta-liikkeeseen','2015-01-09 13:53:25','2015-01-09 13:53:25'),(2,'Kalenteri','Enter calendar here',1,'kalenteri','2015-01-09 13:56:00','2015-01-09 13:56:00');
+INSERT INTO `pages` VALUES (1,'KEHON TUNTEMISESTA LIIKKEESEEN','<p><strong>Kehosi on liikkeen l&auml;ht&ouml;kohta &ndash; el&auml;v&auml;&auml; arkkitehtuuria</strong></p>\r\n\r\n<p>Arkkitehtuuri viittaa rakenteisiin, osien suhteisiin, tukeen ja kannatukseen. T&auml;st&auml; on kyse my&ouml;s kehoarkkitehtuurissa. Luinen tukirakennelma, nivelet liitoksina ja lihakset luiden liikuttajina muodostavat toimivan kokonaisuuden, el&auml;v&auml;n arkkitehtuurin.<img alt=\"\" src=\"http://attitudeks.icewhistle.com:80/images/uploads/medium_10000001A.jpg\" style=\"border-style:solid; border-width:30px; float:right; height:393px; width:580px\" /></p>\r\n\r\n<p>Kehon rakenne ja fysiologiset lainalaisuudet luovat hienon loogisen j&auml;rjestelm&auml;n. Sen tarkkaileva tutkiminen syvent&auml;&auml; yhteytt&auml; omaan kehoon &ndash; todellisuuteen.</p>\r\n\r\n<p>Suhde kehoon n&auml;kyy kauas. Kun tiedostat, miten kehosi toimii ja l&ouml;yd&auml;t liikkeiden yhteyden, voit my&ouml;s kokea liikkumisen kauneutta.</p>\r\n\r\n<p>Liikuntatieteiden kandidaatin koulutukseni ja 20 vuoden ty&ouml; liikunnanopettajana kaikilla kouluasteilla sek&auml; opettajankoulutuksessa ovat opettaneet minulle ihmiskehon arkkitehtuuria.</p>\r\n\r\n<p>Ihmisen perusrakenne on kaikille yhteinen, mutta jokaisen kokemus omasta kehosta on erilainen. T&auml;h&auml;n kokemiseen vaikuttavat ik&auml; ja suhde fyysisyyteen.</p>\r\n\r\n<p>Havainnointi on harjoittelun l&auml;ht&ouml;kohta. Se paljastaa kunkin ongelmakohtia ja toisaalta auttaa l&ouml;yt&auml;m&auml;&auml;n loogisia ja mahdollisia ratkaisuja niihin. Harjoittelusta muodostuu fyysinen dialogi oman kehon ja ohjauksen v&auml;lill&auml;.</p>\r\n\r\n<p>Yliopistokoulutuksen ja ty&ouml;kokemuksen lis&auml;ksi ohjauksessani vaikuttavat nykytanssi ja Pilates. Liikkeen analysointia olen oppinut erityisesti tanssipedagogi Eeva Kaarion yksityistunneilla. Tutustuminen Pilates-menetelm&auml;&auml;n on tarkentanut tiet&auml;myst&auml; eri lihastukij&auml;rjestelmien merkityksest&auml;.</p>\r\n\r\n<p>Ohjaajana olen innostunut niist&auml; mahdollisuuksista, joita voit omasta kehostasi l&ouml;yt&auml;&auml;, kun tieto j&auml;sentyy arjen k&auml;yt&auml;nn&ouml;ksi.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Tunnit</p>\r\n\r\n<p>Ryhm&auml;tunnit<img alt=\"\" src=\"http://attitudeks.icewhistle.com:80/images/uploads/medium_10000002A.jpg\" style=\"float:right; height:392px; width:580px\" /></p>\r\n\r\n<p>Tasapainoinen pystyasento eli ryhti syntyy, kun raajat kytkeytyv&auml;t keskivartalon tukeen. Kire&auml;t lihakset pidennet&auml;&auml;n niin, ett&auml; niiden supistumis- ja venymiskyky elpyy ja laajat liikeradat tulevat mahdollisiksi. Tietoiset toistot kehitt&auml;v&auml;t lihasvoimaa ja selkiytt&auml;v&auml;t oikeita liikeratoja.</p>\r\n\r\n<p>Yksityistunnit</p>\r\n\r\n<p>Yksityistunneilla on mahdollista paneutua syvemmin kunkin harjoittelun tavoitteisiin ja erityisongelmiin. Tavoitteita voivat olla niin hyvinvointi ja terveys kuin virhetottumuksien tai rajoitteiden ty&ouml;st&auml;minen. Yksityistunti varataan.</p>\r\n\r\n<p>Kerron mielell&auml;ni tunneista tarkemmin puhelimitse tai s&auml;hk&ouml;postilla.</p>\r\n\r\n<p>&nbsp;</p>\r\n',1,'kehon-tuntemisesta-liikkeeseen','2015-01-09 13:53:25','2015-01-10 11:14:50'),(2,'Kalenteri','Enter calendar here',1,'kalenteri','2015-01-09 13:56:00','2015-01-09 13:56:00'),(3,'Kontakti','<p>Contact information here</p>\r\n',1,'kontakti','2015-01-10 10:43:01','2015-01-10 10:43:01');
 /*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,7 +203,7 @@ CREATE TABLE `posts` (
   `slug` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_posts_on_slug` (`slug`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -183,6 +212,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
+INSERT INTO `posts` VALUES (1,'Sample blog post','<p>Here is a sample blog post.</p>\r\n\r\n<p><br />\r\nWith a photo included:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"http://attitudeks.icewhistle.com:80/images/uploads/2013-05-15_12.10.39.jpg\" style=\"height:600px; width:800px\" /></p>\r\n',1,'2015-01-10 10:45:33','2015-01-10 10:45:33','sample-blog-post');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,7 +235,7 @@ CREATE TABLE `schema_migrations` (
 
 LOCK TABLES `schema_migrations` WRITE;
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` VALUES ('1'),('2'),('3'),('4'),('5'),('6');
+INSERT INTO `schema_migrations` VALUES ('1'),('2'),('3'),('4'),('5'),('6'),('7'),('8');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -218,4 +248,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-01-09  9:32:41
+-- Dump completed on 2015-01-11  5:09:47

@@ -1,14 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-$primary-color: #FD353A;
-$secondary-color: #FE9092;
+$primary-color: #FF0080;
+$secondary-color: #D08AAF;
 
 body, h1, h2 {
   color: #333;
   font-weight: 300;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
+p {
+  font-family: 'Open Sans', sans-serif ;
+}
 a {
   text-decoration: none;
   color: $primary-color;
@@ -19,7 +22,7 @@ a {
 
 nav {
   margin-top: 1.5rem;
-
+  padding-bottom: 1rem;
   width: 100%;
   float: left;
   ul {
@@ -32,9 +35,9 @@ nav {
         vertical-align: -webkit-baseline-middle;
       }
       &.title {
-        font-size: 2.2rem;
+        font-size: 2.7rem;
         a {
-          vertical-align: baseline;
+          vertical-align: top;
         }
       }
     }
@@ -129,7 +132,7 @@ section.content {
       font-style: italic;
     }
     .body {
-      font-family: 'Source Sans Pro', sans-serif ;
+      font-family: 'Open Sans', sans-serif ;
     }
   }
 }
