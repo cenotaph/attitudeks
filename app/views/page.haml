@@ -4,5 +4,5 @@
       %h2= @page.title
     
 .pure-g
-  .pure-u-3-4.pure-u-sm-1-1.page_wrapper
+  .pure-u-sm-1-1.page_wrapper{class: @page.slug == 'kehon-tuntemisesta-liikkeeseen' ? false : "pure-u-lg-3-5"}
     = @page.body.html_safe
