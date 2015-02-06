@@ -124,7 +124,7 @@ section.content {
   }
   
   .page_wrapper, .post .body {
-
+    margin-left: .5rem;
     img {
       max-width: 100%;
       height: auto !important;
@@ -173,6 +173,9 @@ footer {
   border-top: 1px dotted $primary-color;
 }
 @media screen and (max-width: 47em) {
+.pure-g {
+  letter-spacing: initial;
+}
   nav {
     ul {
       li {
@@ -186,6 +189,7 @@ footer {
   
   section.content {
     .page_wrapper, .post .body {
+
       img {
         padding: 30px 0px;
       }
